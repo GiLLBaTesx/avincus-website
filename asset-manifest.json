@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/avincus-website/static/css/main.4d820bab.css",
-    "main.js": "/avincus-website/static/js/main.03eba384.js",
+    "main.js": "/avincus-website/static/js/main.44deea5c.js",
+    "static/media/avincus-logo.png": "/avincus-website/static/media/avincus-logo.9755d1b01b212f852615.png",
     "index.html": "/avincus-website/index.html",
     "main.4d820bab.css.map": "/avincus-website/static/css/main.4d820bab.css.map",
-    "main.03eba384.js.map": "/avincus-website/static/js/main.03eba384.js.map"
+    "main.44deea5c.js.map": "/avincus-website/static/js/main.44deea5c.js.map"
   },
   "entrypoints": [
     "static/css/main.4d820bab.css",
-    "static/js/main.03eba384.js"
+    "static/js/main.44deea5c.js"
   ]
 }
