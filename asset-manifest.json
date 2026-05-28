@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/avincus-website/static/css/main.4d820bab.css",
+    "main.js": "/avincus-website/static/js/main.112ba324.js",
+    "index.html": "/avincus-website/index.html",
+    "main.4d820bab.css.map": "/avincus-website/static/css/main.4d820bab.css.map",
+    "main.112ba324.js.map": "/avincus-website/static/js/main.112ba324.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d820bab.css",
+    "static/js/main.112ba324.js"
+  ]
+}
