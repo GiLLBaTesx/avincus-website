@@ -92,12 +92,7 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <button 
-                className="service-button"
-                onClick={() => handleLearnMore(service.title)}
-              >
-                Learn More
-              </button>
+              <button className="service-button">Learn More</button>
             </div>
           ))}
         </div>

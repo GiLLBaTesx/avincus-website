@@ -47,25 +47,22 @@ const Contact = () => {
     setSubmitStatus(null);
     
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formspree.io/f/xaqkavgz', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'f7409e87-5546-4665-9d55-02d6733271c9',
           name: formData.name,
           email: formData.email,
-          subject: `New Inquiry: ${formData.service || 'General'}`,
-          message: `Service: ${formData.service}\n\nMessage:\n${formData.message}`,
-          from_name: formData.name,
-          replyto: formData.email
+          service: formData.service,
+          message: formData.message,
+          _subject: `New Inquiry: ${formData.service || 'General'}`,
+          _replyto: formData.email
         })
       });
       
-      const result = await response.json();
-      
-      if (result.success) {
+      if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', service: '', message: '' });
         setTimeout(() => setSubmitStatus(null), 5000);

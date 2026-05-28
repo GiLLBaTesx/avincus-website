@@ -230,22 +230,6 @@
     padding: 80px 30px;
   }
 
-  .portfolio-coming-soon {
-    padding: 60px 30px;
-  }
-
-  .coming-soon-icon {
-    font-size: 60px;
-  }
-
-  .coming-soon-title {
-    font-size: 32px;
-  }
-
-  .coming-soon-description {
-    font-size: 16px;
-  }
-
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -255,27 +239,6 @@
 @media (max-width: 480px) {
   .portfolio {
     padding: 60px 20px;
-  }
-
-  .portfolio-coming-soon {
-    padding: 40px 20px;
-  }
-
-  .coming-soon-icon {
-    font-size: 50px;
-  }
-
-  .coming-soon-title {
-    font-size: 28px;
-  }
-
-  .coming-soon-description {
-    font-size: 15px;
-  }
-
-  .coming-soon-button {
-    width: 100%;
-    padding: 14px 30px;
   }
 
   .portfolio-card {

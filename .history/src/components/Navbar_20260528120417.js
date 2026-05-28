@@ -1,0 +1,45 @@
+import React, { useState } from 'react';
+import './Navbar.css';
+
+const Navbar = ({ scrolled }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMenuOpen(false);
+    }
+  };
+
+  return (
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container">
+        <div className="navbar-logo" onClick={() => scrollToSection('hero')}>
+          <img src="/avincus-logo.png" alt="Avincus Logo" className="logo-image" />
+          <span className="logo-text">AVINCUS SOFTWARE DEVELOPMENT SERVICES</span>
+        </div>
+
+        <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
+          <button onClick={() => scrollToSection('hero')} className="nav-link">Home</button>
+          <button onClick={() => scrollToSection('services')} className="nav-link">Services</button>
+          <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
+          <button onClick={() => scrollToSection('portfolio')} className="nav-link">Portfolio</button>
+          <button onClick={() => scrollToSection('contact')} className="nav-link nav-link-cta">Contact Us</button>
+        </div>
+
+        <button className="navbar-toggle" onClick={toggleMenu}>
+          <span className={`bar ${menuOpen ? 'active' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'active' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'active' : ''}`}></span>
+        </button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

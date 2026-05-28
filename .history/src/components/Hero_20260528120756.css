@@ -79,7 +79,6 @@
 
 .hero-logo {
   margin-bottom: 35px;
-  margin-top: 100px;
   animation: fadeInDown 1s ease-out 0.2s forwards;
   opacity: 0;
 }
@@ -275,11 +274,6 @@
     letter-spacing: 8px;
   }
 
-  .hero-subtitle {
-    font-size: 14px;
-    letter-spacing: 2px;
-  }
-
   .hero-logo-image {
     width: 170px;
     height: 170px;
@@ -306,11 +300,6 @@
   .hero-title {
     font-size: 40px;
     letter-spacing: 6px;
-  }
-
-  .hero-subtitle {
-    font-size: 12px;
-    letter-spacing: 1.5px;
   }
 
   .hero-logo-image {

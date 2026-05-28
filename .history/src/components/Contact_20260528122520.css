@@ -188,13 +188,7 @@ textarea.form-input {
   transition: all 0.3s ease;
 }
 
-.form-submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.form-submit:hover:not(:disabled) {
+.form-submit:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
 }

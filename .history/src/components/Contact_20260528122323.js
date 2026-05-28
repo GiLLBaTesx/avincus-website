@@ -9,8 +9,6 @@ const Contact = () => {
     service: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -41,43 +39,28 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
     
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: 'f7409e87-5546-4665-9d55-02d6733271c9',
-          name: formData.name,
-          email: formData.email,
-          subject: `New Inquiry: ${formData.service || 'General'}`,
-          message: `Service: ${formData.service}\n\nMessage:\n${formData.message}`,
-          from_name: formData.name,
-          replyto: formData.email
-        })
-      });
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', service: '', message: '' });
-        setTimeout(() => setSubmitStatus(null), 5000);
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`New Inquiry: ${formData.service || 'General'}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Service: ${formData.service}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    const mailtoLink = `mailto:avincus.softwaredevelopment@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    alert('Opening your email client... Thank you for your interest!');
+    
+    // Reset form
+    setFormData({ name: '', email: '', service: '', message: '' });
   };
 
   return (
@@ -115,17 +98,6 @@ const Contact = () => {
           </div>
 
           <form className={`contact-form ${isVisible ? 'visible' : ''}`} onSubmit={handleSubmit}>
-            {submitStatus === 'success' && (
-              <div className="form-message success">
-                ✓ Thank you! Your message has been sent successfully. We'll get back to you soon.
-              </div>
-            )}
-            {submitStatus === 'error' && (
-              <div className="form-message error">
-                ✗ Oops! Something went wrong. Please try again or email us directly.
-              </div>
-            )}
-            
             <div className="form-group">
               <input
                 type="text"
@@ -135,7 +107,6 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="form-input"
-                disabled={isSubmitting}
               />
             </div>
             <div className="form-group">
@@ -147,7 +118,6 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="form-input"
-                disabled={isSubmitting}
               />
             </div>
             <div className="form-group">
@@ -157,13 +127,12 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="form-input"
-                disabled={isSubmitting}
               >
                 <option value="">Select Service</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Mobile Development">Mobile Development</option>
-                <option value="Software Development">Software Development</option>
-                <option value="Consulting">Consulting</option>
+                <option value="web">Web Development</option>
+                <option value="mobile">Mobile Development</option>
+                <option value="software">Software Development</option>
+                <option value="consulting">Consulting</option>
               </select>
             </div>
             <div className="form-group">
@@ -175,11 +144,10 @@ const Contact = () => {
                 required
                 rows="6"
                 className="form-input"
-                disabled={isSubmitting}
               ></textarea>
             </div>
-            <button type="submit" className="form-submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+            <button type="submit" className="form-submit">
+              Send Message
             </button>
           </form>
         </div>

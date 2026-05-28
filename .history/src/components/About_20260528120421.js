@@ -27,10 +27,10 @@ const About = () => {
   }, []);
 
   const stats = [
-    { number: '2026', label: 'Founded' },
-    { number: '100%', label: 'Commitment' },
-    { number: '24/7', label: 'Support' },
-    { number: '∞', label: 'Possibilities' }
+    { number: '50+', label: 'Projects Delivered' },
+    { number: '30+', label: 'Happy Clients' },
+    { number: '5+', label: 'Years Experience' },
+    { number: '100%', label: 'Client Satisfaction' }
   ];
 
   return (
@@ -38,21 +38,17 @@ const About = () => {
       <div className="about-container">
         <div className="about-content">
           <div className={`about-text ${isVisible ? 'visible' : ''}`}>
-            <h2 className="section-title">About AVINCUS</h2>
+            <h2 className="section-title">About AVINCUS SOFTWARE DEVELOPMENT SERVICES</h2>
             <div className="gold-line"></div>
             <p className="about-description">
-              At AVINCUS, we believe in the power of strategic thinking, capital investment in innovation, 
+              At AVINCUS SOFTWARE DEVELOPMENT SERVICES, we believe in the power of strategic thinking, capital investment in innovation, 
               and the conquest of digital challenges. Our name embodies our philosophy: combining strategy, 
               resources, and determination to deliver exceptional results.
             </p>
             <p className="about-description">
-              As a newly established software development company, we bring fresh perspectives and cutting-edge 
-              expertise to every project. We're passionate developers and strategists ready to transform your 
-              vision into powerful, scalable applications that drive real business value.
-            </p>
-            <p className="about-description">
-              Whether you're a startup with a bold idea or an established business seeking digital transformation, 
-              we're here to be your technology partner from day one.
+              We are a team of passionate developers, designers, and strategists dedicated to crafting 
+              premium digital solutions. From startups to enterprises, we partner with businesses to 
+              transform their vision into powerful, scalable applications.
             </p>
             <div className="about-values">
               <div className="value-item">

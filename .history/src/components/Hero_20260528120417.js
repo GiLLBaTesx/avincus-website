@@ -27,8 +27,7 @@ const Hero = () => {
           <img src="/avincus-logo.png" alt="Avincus Logo" className="hero-logo-image" />
         </div>
         
-        <h1 className="hero-title">AVINCUS</h1>
-        <p className="hero-subtitle">SOFTWARE DEVELOPMENT SERVICES</p>
+        <h1 className="hero-title">AVINCUS SOFTWARE DEVELOPMENT SERVICES</h1>
         
         <div className="hero-divider"></div>
         

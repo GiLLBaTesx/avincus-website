@@ -42,12 +42,8 @@ const Footer = () => {
 
           <div className="footer-contact">
             <h3>Contact</h3>
-            <a href="mailto:avincus.softwaredevelopment@gmail.com" className="footer-link">
-              avincus.softwaredevelopment@gmail.com
-            </a>
-            <a href="tel:09934341233" className="footer-link">
-              0993 434 1233
-            </a>
+            <p>contact@avincus.com</p>
+            <p>+1 (555) 123-4567</p>
             <div className="footer-social">
               <a href="#" aria-label="LinkedIn">in</a>
               <a href="#" aria-label="Twitter">𝕏</a>
