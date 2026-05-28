@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-brand">
             <div className="footer-logo">
-              <img src={logo} alt="Avincus Logo" className="footer-logo-image" />
+              <img src={`${process.env.PUBLIC_URL}/avincus-logo.png`} alt="Avincus Logo" className="footer-logo-image" />
               <span className="footer-logo-text">AVINCUS</span>
             </div>
             <p className="footer-tagline">Strategy. Capital. Conquest.</p>

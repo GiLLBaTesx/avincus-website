@@ -25,7 +25,7 @@ const Hero = () => {
 
       <div className={`hero-content ${isVisible ? 'visible' : ''}`}>
         <div className="hero-logo">
-          <img src={logo} alt="Avincus Logo" className="hero-logo-image" />
+          <img src={`${process.env.PUBLIC_URL}/avincus-logo.png`} alt="Avincus Logo" className="hero-logo-image" />
         </div>
         
         <h1 className="hero-title">AVINCUS</h1>

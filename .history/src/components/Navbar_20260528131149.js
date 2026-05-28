@@ -21,7 +21,7 @@ const Navbar = ({ scrolled }) => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollToSection('hero')}>
-          <img src={logo} alt="Avincus Logo" className="logo-image" />
+          <img src={`${process.env.PUBLIC_URL}/avincus-logo.png`} alt="Avincus Logo" className="logo-image" />
           <span className="logo-text">AVINCUS</span>
         </div>
 
